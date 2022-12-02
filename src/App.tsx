@@ -10,8 +10,36 @@ import ISS from "./components/ISS";
 import Calendar from "./components/Calender";
 import Bookmarked from "./components/Bookmarked";
 import Main from "./components/Main";
+import { useEffect } from "react";
+import { getForecast, getGridPoints } from "./services/WeatherApiService";
 
 function App() {
+  // let latitude: any;
+  // let longitude: any;
+
+  // navigator.geolocation.getCurrentPosition(getLatLon);
+
+  // function getLatLon(position: any) {
+  //   latitude = position.coords.latitude;
+  //   longitude = position.coords.longitude;
+  // }
+
+  // console.log(latitude, longitude);
+
+  useEffect(() => {
+    // if (lat && longitude) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      let lat = position.coords.latitude;
+      let long = position.coords.longitude;
+      console.log(lat);
+      console.log(long);
+      getGridPoints(lat, long).then((res) => {
+        getForecast(res.properties.forecast).then((response) => {
+          console.log(response);
+        });
+      });
+    });
+  }, []);
   return (
     <div className="App">
       <Router>

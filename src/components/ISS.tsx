@@ -1,7 +1,20 @@
+import { useEffect, useState } from "react";
+import PeopleInSpace, { Astronauts } from "../models/PeopleInSpace";
+import { getPeopleInSpace } from "../services/PeopleInSpaceApiService";
 import "./ISS.css";
 
 const ISS = () => {
-  return <div className="ISS">ISS works</div>;
+  const [allAstronauts, setallAstronauts] = useState<PeopleInSpace>();
+  useEffect(() => {
+    getPeopleInSpace().then((res) => setallAstronauts(res));
+  }, []);
+  // console.log(allAstronauts?.people);
+  const issAstronauts = allAstronauts?.people.filter((item) => {
+    return item.craft === "ISS";
+  });
+  console.log(issAstronauts);
+
+  return <div className="ISS">ISS Works</div>;
 };
 
 export default ISS;

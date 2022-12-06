@@ -55,7 +55,7 @@ const EventsCalendar = () => {
   }, []);
 
   console.log(calendarJsonInput);
-  calendarJsonInput?.map((event) => {});
+  // calendarJsonInput?.map((event) => {});
   return (
     <div className="EventsCalendar">
       <Calendar

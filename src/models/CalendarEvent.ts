@@ -1,7 +1,8 @@
 export default interface CalendarEvent {
   _id?: string;
-  dtstart: string;
-  summary: string;
+  start: Date;
+  title: string;
   description: string;
   url: string;
+  end: Date;
 }

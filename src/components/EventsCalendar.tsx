@@ -26,8 +26,31 @@ const localizer = dateFnsLocalizer({
 const EventsCalendar = () => {
   const [calendarJsonInput, setCalendarJsonInput] = useState<CalendarEvent[]>();
   const [calendarInfo, setCalendarInfo] = useState<DisplayEventInfo[]>();
+
+  const dateMod = (date: string) => {
+    let year = date.slice(0, 4);
+    let month = date.slice(4, 6);
+    let day = date.slice(6, 8);
+    let hours = date.slice(9, 11);
+    let minutes = date.slice(11, 13);
+    let seconds = date.slice(13, 15);
+    return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
+  };
+
   useEffect(() => {
-    getAllCalendarEvent().then((res) => setCalendarJsonInput(res));
+    getAllCalendarEvent().then((res) =>
+      setCalendarJsonInput(() => {
+        const updatedArray = [...res];
+        updatedArray.forEach((item) => {
+          let xStart = item.start.toString();
+          let xEnd = item.end.toString();
+          item.start = new Date(dateMod(xStart));
+          item.end = new Date(dateMod(xEnd));
+        });
+        console.log(updatedArray);
+        return updatedArray;
+      })
+    );
     //console.log(res));
   }, []);
 
@@ -37,8 +60,8 @@ const EventsCalendar = () => {
     <div className="EventsCalendar">
       <Calendar
         localizer={localizer}
-        events={calendarInfo}
-        startAccessor="dtstart"
+        events={calendarJsonInput}
+        // startAccessor="dtstart"
         style={{ height: 500 }}
       />
     </div>

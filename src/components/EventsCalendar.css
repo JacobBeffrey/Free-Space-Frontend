@@ -1,0 +1,11 @@
+.EventsCalendar .rbc-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.EventsCalendar .rbc-date-cell {
+  width: 14%;
+  border: 1px solid black;
+  height: 100px;
+}

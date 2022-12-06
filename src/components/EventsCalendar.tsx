@@ -9,6 +9,7 @@ import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
 import getDay from "date-fns/getDay";
 import enUS from "date-fns/locale/en-US";
+import DisplayEventInfo from "../models/DisplayEventInfo";
 
 const locales = {
   "en-US": enUS,
@@ -23,11 +24,15 @@ const localizer = dateFnsLocalizer({
 });
 
 const EventsCalendar = () => {
-  const [calendarInfo, setCalendarInfo] = useState<CalendarEvent[]>();
-
+  const [calendarJsonInput, setCalendarJsonInput] = useState<CalendarEvent[]>();
+  const [calendarInfo, setCalendarInfo] = useState<DisplayEventInfo[]>();
   useEffect(() => {
-    getAllCalendarEvent().then((res) => console.log(res));
+    getAllCalendarEvent().then((res) => setCalendarJsonInput(res));
+    //console.log(res));
   }, []);
+
+  console.log(calendarJsonInput);
+  calendarJsonInput?.map((event) => {});
   return (
     <div className="EventsCalendar">
       <Calendar

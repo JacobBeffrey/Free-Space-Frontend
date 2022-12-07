@@ -23,19 +23,14 @@ function AuthContextProvider({ children }: { children: ReactNode }) {
             setAccount(res);
             console.log(res);
           } else {
-            if (rendered) {
-              addNewAccount({
-                userName: newUser.displayName || "",
-                email: newUser.email || "",
-                loggedIn: true,
-                uid: newUser.uid,
-              }).then((response) => {
-                setAccount(response);
-              });
-            }
-            if (!rendered) {
-              setRendered(true);
-            }
+            addNewAccount({
+              userName: newUser.displayName || "",
+              email: newUser.email || "",
+              loggedIn: true,
+              uid: newUser.uid,
+            }).then((response) => {
+              setAccount(response);
+            });
           }
         });
       } else {

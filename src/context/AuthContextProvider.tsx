@@ -9,6 +9,7 @@ import {
 import AccountInfo from "../models/AccountInfo";
 
 function AuthContextProvider({ children }: { children: ReactNode }) {
+  const [rendered, setRendered] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const [account, setAccount] = useState<AccountInfo | null>(null);
   useEffect(() => {
@@ -22,14 +23,19 @@ function AuthContextProvider({ children }: { children: ReactNode }) {
             setAccount(res);
             console.log(res);
           } else {
-            addNewAccount({
-              userName: newUser.displayName || "",
-              email: newUser.email || "",
-              loggedIn: true,
-              uid: newUser.uid,
-            }).then((response) => {
-              setAccount(response);
-            });
+            if (rendered) {
+              addNewAccount({
+                userName: newUser.displayName || "",
+                email: newUser.email || "",
+                loggedIn: true,
+                uid: newUser.uid,
+              }).then((response) => {
+                setAccount(response);
+              });
+            }
+            if (!rendered) {
+              setRendered(true);
+            }
           }
         });
       } else {

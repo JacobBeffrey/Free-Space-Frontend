@@ -33,7 +33,7 @@ function AuthContextProvider({ children }: { children: ReactNode }) {
           }
         });
       } else {
-        setAccount(null);
+        setUser(null);
       }
     });
   }, [user]);

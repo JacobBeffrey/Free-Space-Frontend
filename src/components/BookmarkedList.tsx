@@ -1,7 +1,6 @@
+import { useContext } from "react";
 import "./BookmarkedList.css";
 
-const BookmarkedList = () => {
-  return <div className="BookmarkedList">BookmarkedList works</div>;
-};
+const BookmarkedList = () => {};
 
 export default BookmarkedList;

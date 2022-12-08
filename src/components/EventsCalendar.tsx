@@ -58,14 +58,19 @@ const EventsCalendar = () => {
 
   console.log(calendarJsonInput);
   // calendarJsonInput?.map((event) => {});
+  // -------------------------------------------------change any
+  const addEvent = (e: any) => {
+    console.dir(e.target);
+  };
   return (
-    <div className="EventsCalendar">
+    <div onClick={addEvent} className="EventsCalendar">
       <Calendar
         localizer={localizer}
         events={calendarJsonInput}
         startAccessor="start"
         endAccessor="end"
         style={{ height: 500 }}
+        // resourceIdAccessor={}
       />
     </div>
   );

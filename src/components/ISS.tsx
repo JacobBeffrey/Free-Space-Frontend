@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import PeopleInSpace, { Astronauts } from "../models/PeopleInSpace";
 import { getPeopleInSpace } from "../services/PeopleInSpaceApiService";
+
 import "./ISS.css";
 
 const ISS = () => {
@@ -14,7 +15,7 @@ const ISS = () => {
   });
   console.log(issAstronauts);
 
-  return <div className="ISS">ISS Works</div>;
+  return <div className="ISS"></div>;
 };
 
 export default ISS;

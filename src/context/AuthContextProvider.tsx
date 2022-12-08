@@ -28,6 +28,7 @@ function AuthContextProvider({ children }: { children: ReactNode }) {
               email: newUser.email || "",
               loggedIn: true,
               uid: newUser.uid,
+              favorites: [],
             }).then((response) => {
               setAccount(response);
             });
@@ -39,7 +40,9 @@ function AuthContextProvider({ children }: { children: ReactNode }) {
     });
   }, []);
   return (
-    <AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ user, account, setAccount }}>
+      {children}
+    </AuthContext.Provider>
   );
 }
 export default AuthContextProvider;

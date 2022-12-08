@@ -21,3 +21,14 @@ export const addNewAccount = (
       console.log(error);
     });
 };
+
+export const updateAccount = (
+  updatedAccount: AccountInfo
+): Promise<AccountInfo> => {
+  return axios
+    .put(`${baseUrl}/AccountInfo/${updatedAccount._id}`, updatedAccount)
+    .then((res) => res.data)
+    .catch((error) => {
+      console.log(error);
+    });
+};

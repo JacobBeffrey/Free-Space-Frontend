@@ -1,7 +1,7 @@
-import "./Bookmarked.css";
+import "./BookmarkedList.css";
 
-const Bookmarked = () => {
-  return <div className="Bookmarked">Bookmarked works</div>;
+const BookmarkedList = () => {
+  return <div className="BookmarkedList">BookmarkedList works</div>;
 };
 
-export default Bookmarked;
+export default BookmarkedList;

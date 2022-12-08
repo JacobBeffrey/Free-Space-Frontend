@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import { signInWithGoogle, signOut } from "../firebaseConfig";
 import "./Header.css";
+import WeatherForecast from "./WeatherForecast";
 const Header = () => {
   const { user } = useContext(AuthContext);
 
@@ -13,6 +14,7 @@ const Header = () => {
           <h1>Free Space</h1>
         </Link>
       </div>
+      <WeatherForecast />
       <div className="nav-container">
         <nav>
           {user ? (

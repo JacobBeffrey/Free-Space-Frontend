@@ -25,21 +25,6 @@ function App() {
   // }
 
   // console.log(latitude, longitude);
-
-  useEffect(() => {
-    // if (lat && longitude) {
-    navigator.geolocation.getCurrentPosition((position) => {
-      let lat = position.coords.latitude;
-      let long = position.coords.longitude;
-      console.log(lat);
-      console.log(long);
-      getGridPoints(lat, long).then((res) => {
-        getForecast(res.properties.forecast).then((response) => {
-          console.log(response);
-        });
-      });
-    });
-  }, []);
   return (
     <div className="App">
       <Router>

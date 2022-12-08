@@ -63,6 +63,8 @@ const EventsCalendar = () => {
   // calendarJsonInput?.map((event) => {});
   // -------------------------------------------------change any
   const addEvent = (e: any) => {
+    console.dir(e);
+
     if (e && account) {
       const copyOfAccount = { ...account };
       copyOfAccount.favorites.push(e);
@@ -71,7 +73,6 @@ const EventsCalendar = () => {
       updateAccount(copyOfAccount).then((res) => {
         setAccount(res);
       });
-      console.dir(e);
     }
   };
   return (

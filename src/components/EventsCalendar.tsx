@@ -68,7 +68,7 @@ const EventsCalendar = () => {
     if (e && account) {
       const copyOfAccount = { ...account };
       copyOfAccount.favorites.push(e);
-      console.log(copyOfAccount);
+      console.log(copyOfAccount, e);
 
       updateAccount(copyOfAccount).then((res) => {
         setAccount(res);

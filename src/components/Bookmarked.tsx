@@ -45,11 +45,12 @@ const Bookmarked = () => {
     setCalendarJsonInput(() => {
       if (account) {
         const updatedArray = [...account?.favorites];
+        console.log(updatedArray);
         updatedArray.forEach((item) => {
-          let xStart = item.start.toString();
-          let xEnd = item.end.toString();
-          item.start = new Date(dateMod(xStart));
-          item.end = new Date(dateMod(xEnd));
+          // let xStart = item.start.toString();
+          // let xEnd = item.end.toString();
+          item.start = new Date(item.start);
+          item.end = new Date(item.end);
         });
         console.log(updatedArray);
         return updatedArray;
@@ -62,18 +63,17 @@ const Bookmarked = () => {
   console.log(account?.favorites);
   // calendarJsonInput?.map((event) => {});
   // -------------------------------------------------change any
-  const addEvent = (e: any) => {
-    if (e && account) {
-      copyOfAccount = { ...account };
-      copyOfAccount.favorites.push(e);
-      console.log(copyOfAccount);
-
-      updateAccount(copyOfAccount).then((res) => {
-        setAccount(res);
-      });
-      console.dir(e);
-    }
-  };
+  // const addEvent = (e: any) => {
+  //   if (e && account) {
+  //     copyOfAccount = { ...account };
+  //     copyOfAccount.favorites.push(e);
+  //     console.log(copyOfAccount);
+  //     updateAccount(copyOfAccount).then((res) => {
+  //       setAccount(res);
+  //     });
+  //     console.dir(e);
+  //   }
+  // };
 
   return (
     <div className="BookMarked">

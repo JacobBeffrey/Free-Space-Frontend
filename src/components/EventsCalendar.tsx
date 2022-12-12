@@ -14,6 +14,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import DisplayEventInfo from "../models/DisplayEventInfo";
 import { updateAccount } from "../services/AccountInfoApiService";
 import AuthContext from "../context/AuthContext";
+import { doesNotThrow } from "assert";
 
 const locales = {
   "en-US": enUS,
@@ -63,16 +64,21 @@ const EventsCalendar = () => {
   // calendarJsonInput?.map((event) => {});
   // -------------------------------------------------change any
   const addEvent = (e: any) => {
-    console.dir(e);
+    console.log(e);
 
     if (e && account) {
-      const copyOfAccount = { ...account };
-      copyOfAccount.favorites.push(e);
-      console.log(copyOfAccount, e);
-
-      updateAccount(copyOfAccount).then((res) => {
-        setAccount(res);
+      const isFav = account?.favorites.some((item) => {
+        return item._id === e._id;
       });
+      console.log(isFav);
+      const copyOfAccount = { ...account };
+      if (!isFav) {
+        copyOfAccount.favorites.push(e);
+        console.log(copyOfAccount, e);
+        updateAccount(copyOfAccount).then((res) => {
+          setAccount(res);
+        });
+      }
     }
   };
   return (

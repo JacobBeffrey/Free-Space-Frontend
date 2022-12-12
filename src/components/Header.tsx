@@ -62,7 +62,6 @@ const Header = () => {
           ))}
         </ul>
       </div>
-      <WeatherForecast />
 
       <ul className="favorite-events"></ul>
       <div></div>
@@ -78,10 +77,10 @@ const Header = () => {
           )}
           <ul>
             <li>
-              <Link to="/calendar">Look Up</Link>
+              <Link to="/calendar">Calendar</Link>
             </li>
             <li>
-              <Link to="/iss">ISS</Link>
+              <Link to="/iss">NASA TV</Link>
             </li>
             <li>
               <Link to="/bookmarked">Bookmarked</Link>

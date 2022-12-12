@@ -12,6 +12,7 @@ import Main from "./components/Main";
 import { useEffect } from "react";
 import { getForecast, getGridPoints } from "./services/WeatherApiService";
 import EventsCalendar from "./components/EventsCalendar";
+import Footer from "./components/Footer";
 
 function App() {
   // let latitude: any;
@@ -36,6 +37,7 @@ function App() {
           <Route path="/bookmarked" element={<Bookmarked />} />
           <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

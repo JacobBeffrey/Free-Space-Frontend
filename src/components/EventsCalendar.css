@@ -9,7 +9,10 @@
   border: 1px solid black;
   height: 100px;
 } */
+
+.EventsCalendar {
+}
 .rbc-selected div {
-  background-color: red;
-  color: black;
+  background-color: #8ecae6;
+  color: white;
 }

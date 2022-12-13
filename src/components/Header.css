@@ -1,13 +1,18 @@
 .Header {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   background-color: #023047;
   color: white;
+  padding: 5px 10px;
+  height: 95px;
 }
 
 .Header a {
   text-decoration: none;
   color: white;
+}
+.Header a:hover {
+  color: #fb8500;
 }
 
 .Header li {
@@ -21,6 +26,8 @@
 .Header .signout-button-div {
   display: flex;
   flex-direction: column;
+  position: fixed;
+  right: 10px;
 }
 
 .Header .signin-btn-div {
@@ -30,6 +37,13 @@
   height: 40px;
   text-align: center;
   padding: 5px;
+  background-color: #219ebc;
+  color: #023047;
+  border: none;
+  border-radius: 10px;
+}
+.Header button:hover {
+  background-color: #fb8500;
 }
 
 .Header .nav-container {
@@ -38,8 +52,14 @@
   position: relative;
 }
 .Header .favorites-nav {
+  display: flex;
   width: 225px;
-  margin-left: auto;
+  /* margin-left: auto; */
+  align-items: center;
+}
+.Header .favorites-nav .favorite-events {
+  position: fixed;
+  top: 89px;
 }
 .Header label {
   padding: 20px;
@@ -60,12 +80,18 @@
   position: absolute;
   background-color: #8ecae6;
   z-index: 10;
+  padding: 0;
+  margin: 0;
 }
 
 .Header .favorite-events li {
-  padding: 5px;
+  padding: 2.5px 10px;
+  margin: 0;
+  color: #023047;
+  border: solid #219ebc 1px;
 }
 
 .Header .favorite-events :hover {
-  background-color: red;
+  background-color: #fb8500;
+  color: #023047;
 }

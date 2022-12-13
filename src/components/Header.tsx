@@ -68,20 +68,19 @@ const Header = () => {
             </li>
           </ul>
         </nav>
+        <nav className="favorites-nav">
+          <button onClick={() => setFavBoolean(!favBoolean)}>Favorites</button>
+          {favBoolean && (
+            <ul className="favorite-events">
+              {favorites?.map((item) => (
+                <li onClick={() => removeEvent(item)} key={item._id}>
+                  {item.title}
+                </li>
+              ))}
+            </ul>
+          )}
+        </nav>
       </div>
-
-      <nav className="favorites-nav">
-        <button onClick={() => setFavBoolean(!favBoolean)}>Favorites</button>
-        {favBoolean && (
-          <ul className="favorite-events">
-            {favorites?.map((item) => (
-              <li onClick={() => removeEvent(item)} key={item._id}>
-                {item.title}
-              </li>
-            ))}
-          </ul>
-        )}
-      </nav>
 
       {user ? (
         <div className="signout-button-div">

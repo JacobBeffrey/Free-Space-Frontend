@@ -1,0 +1,33 @@
+.Main {
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  /* justify-items: end; */
+  height: 100%;
+}
+.Main h2 {
+  color: white;
+  text-shadow: 2px 2px 3px black;
+  /* background-color: rgba(2, 48, 71, 0.6); */
+}
+.Main p {
+  color: white;
+  text-shadow: 2px 2px 3px black;
+  margin: 5px;
+  /* background-color: rgba(2, 48, 71, 0.6); */
+}
+.Main .Summary {
+  position: absolute;
+
+  bottom: 0;
+  transform: translate(0, -100%);
+  display: flex; /*
+  margin-top: 20%; */
+}
+.Main img {
+  position: absolute;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+}

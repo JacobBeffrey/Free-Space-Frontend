@@ -17,8 +17,8 @@ const ISS = () => {
 
   return (
     <div className="ISS">
-      <ul>
-        <p>Current Astronauts on the ISS</p>
+      <p>Current Astronauts on the ISS</p>
+      <ul className="AstronautsList">
         {issAstronauts?.map((item) => (
           <li key={item.name}>{item.name}</li>
         ))}

@@ -1,0 +1,71 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #023047;
+  color: white;
+}
+
+.Header a {
+  text-decoration: none;
+  color: white;
+}
+
+.Header li {
+  list-style-type: none;
+  margin: 10px;
+}
+
+.Header .menu-nav ul {
+  display: flex;
+}
+.Header .signout-button-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.Header .signin-btn-div {
+}
+.Header button {
+  width: 65px;
+  height: 40px;
+  text-align: center;
+  padding: 5px;
+}
+
+.Header .nav-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.Header .favorites-nav {
+  width: 225px;
+  margin-left: auto;
+}
+.Header label {
+  padding: 20px;
+  color: white;
+  font-size: 1.2em;
+  font-variant: small-caps;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+}
+.Header .favorite-events {
+  display: flex;
+  flex-direction: column;
+  clear: both;
+  overflow: hidden;
+  text-align: center;
+  transition: height 0.4s ease;
+  position: absolute;
+  background-color: #8ecae6;
+  z-index: 10;
+}
+
+.Header .favorite-events li {
+  padding: 5px;
+}
+
+.Header .favorite-events :hover {
+  background-color: red;
+}

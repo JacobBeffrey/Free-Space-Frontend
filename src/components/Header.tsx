@@ -11,6 +11,7 @@ const Header = () => {
   const { account, setAccount } = useContext(AuthContext);
   const [calendarJsonInput, setCalendarJsonInput] = useState<CalendarEvent[]>();
   const [favorites, setFavorites] = useState<CalendarEvent[]>([]);
+  const [favBoolean, setFavBoolean] = useState(false);
 
   useEffect(() => {
     setCalendarJsonInput(() => {
@@ -50,31 +51,11 @@ const Header = () => {
   };
   return (
     <header className="Header">
-      <div>
-        <Link to="/home">
-          <h1>Free Space</h1>
-        </Link>
-        <ul>
-          {favorites?.map((item) => (
-            <li onClick={() => removeEvent(item)} key={item._id}>
-              {item.title}
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <ul className="favorite-events"></ul>
-      <div></div>
+      <Link to="/home">
+        <h1>Free Space</h1>
+      </Link>
       <div className="nav-container">
-        <nav>
-          {user ? (
-            <div>
-              <p>{user.displayName}</p>
-              <button onClick={signOut}>Sign Out</button>
-            </div>
-          ) : (
-            <button onClick={signInWithGoogle}>Sign In</button>
-          )}
+        <nav className="menu-nav">
           <ul>
             <li>
               <Link to="/calendar">Calendar</Link>
@@ -88,6 +69,30 @@ const Header = () => {
           </ul>
         </nav>
       </div>
+
+      <nav className="favorites-nav">
+        <button onClick={() => setFavBoolean(!favBoolean)}>Favorites</button>
+        {favBoolean && (
+          <ul className="favorite-events">
+            {favorites?.map((item) => (
+              <li onClick={() => removeEvent(item)} key={item._id}>
+                {item.title}
+              </li>
+            ))}
+          </ul>
+        )}
+      </nav>
+
+      {user ? (
+        <div className="signout-button-div">
+          <p>{user.displayName}</p>
+          <button onClick={signOut}>Sign Out</button>
+        </div>
+      ) : (
+        <div className="signin-btn-div">
+          <button onClick={signInWithGoogle}>Sign In</button>
+        </div>
+      )}
     </header>
   );
 };

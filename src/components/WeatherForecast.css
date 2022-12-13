@@ -1,0 +1,11 @@
+.WeatherForecast ul {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.WeatherForecast ul li img {
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+}

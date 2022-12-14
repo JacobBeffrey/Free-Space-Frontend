@@ -7,6 +7,10 @@
   height: 95px;
 }
 
+.Header li {
+  list-style-type: none;
+  margin: 10px;
+}
 .Header a {
   text-decoration: none;
   color: white;
@@ -15,23 +19,23 @@
   color: #fb8500;
 }
 
-.Header li {
-  list-style-type: none;
-  margin: 10px;
-}
-
 .Header .menu-nav ul {
   display: flex;
 }
 .Header .signout-button-div {
   display: flex;
   flex-direction: column;
-  position: fixed;
   right: 10px;
+  position: fixed;
 }
 
-/* .Header .signin-btn-div {
-} */
+.Header .signin-btn-div {
+  display: flex;
+  flex-direction: column;
+  padding-top: 25px;
+  right: 10px;
+  position: fixed;
+}
 .Header button {
   width: 65px;
   height: 40px;
@@ -50,6 +54,7 @@
   display: flex;
   align-items: center;
   position: relative;
+  /* width: 100%; */
 }
 .Header .favorites-nav {
   display: flex;
@@ -94,4 +99,21 @@
 .Header .favorite-events :hover {
   background-color: #fb8500;
   color: #023047;
+}
+
+@media screen and (max-width: 768px) {
+  .Header {
+    font-size: x-small;
+    align-items: center;
+  }
+  .Header .nav-ul {
+    padding-left: 5px;
+  }
+
+  .Header button {
+    font-size: x-small;
+  }
+  .Header .signin-btn-div {
+    padding-top: 0px;
+  }
 }

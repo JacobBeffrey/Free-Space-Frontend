@@ -56,7 +56,7 @@ const Header = () => {
       </Link>
       <div className="nav-container">
         <nav className="menu-nav">
-          <ul>
+          <ul className="nav-ul">
             <li>
               <Link to="/calendar">Calendar</Link>
             </li>
@@ -81,7 +81,6 @@ const Header = () => {
           )}
         </nav>
       </div>
-
       {user ? (
         <div className="signout-button-div">
           <p>{user.displayName}</p>

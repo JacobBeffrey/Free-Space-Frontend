@@ -74,7 +74,7 @@ const Header = () => {
             <ul className="favorite-events">
               {favorites?.map((item) => (
                 <li onClick={() => removeEvent(item)} key={item._id}>
-                  {item.title}
+                  <span className="delete-btn">x</span> {item.title}
                 </li>
               ))}
             </ul>

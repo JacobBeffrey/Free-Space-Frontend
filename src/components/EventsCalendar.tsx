@@ -32,6 +32,8 @@ const EventsCalendar = () => {
   const [calendarJsonInput, setCalendarJsonInput] = useState<CalendarEvent[]>();
   const [calendarInfo, setCalendarInfo] = useState<DisplayEventInfo[]>();
   const { account, setAccount } = useContext(AuthContext);
+  const [popUp, setPopUp] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState<CalendarEvent>();
 
   const dateMod = (date: string) => {
     let year = date.slice(0, 4);
@@ -63,23 +65,32 @@ const EventsCalendar = () => {
   console.log(calendarJsonInput);
   // calendarJsonInput?.map((event) => {});
   // -------------------------------------------------change any
-  const addEvent = (e: any) => {
-    console.log(e);
+  const addEvent = () => {
+    console.log(selectedEvent);
 
-    if (e && account) {
+    if (selectedEvent && account) {
       const isFav = account?.favorites.some((item) => {
-        return item._id === e._id;
+        return item._id === selectedEvent._id;
       });
       console.log(isFav);
       const copyOfAccount = { ...account };
       if (!isFav) {
-        copyOfAccount.favorites.push(e);
-        console.log(copyOfAccount, e);
+        copyOfAccount.favorites.push(selectedEvent);
+        console.log(copyOfAccount, selectedEvent);
         updateAccount(copyOfAccount).then((res) => {
           setAccount(res);
+          setPopUp(false);
         });
       }
     }
+  };
+
+  const showPopUp = (calEvent: CalendarEvent) => {
+    setPopUp(true);
+    setSelectedEvent(calEvent);
+  };
+  const closePopUp = () => {
+    setPopUp(false);
   };
   return (
     <div className="EventsCalendar">
@@ -89,8 +100,21 @@ const EventsCalendar = () => {
         startAccessor="start"
         endAccessor="end"
         style={{ height: 500 }}
-        onSelectEvent={addEvent}
+        onSelectEvent={showPopUp}
       />
+      {popUp && selectedEvent && (
+        <div className="popUp">
+          <div className="elements-container">
+            <p className="title">{selectedEvent.title}</p>
+            <button className="addEvent-btn" onClick={addEvent}>
+              add event
+            </button>
+            <button className="remove-popup" onClick={closePopUp}>
+              X
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

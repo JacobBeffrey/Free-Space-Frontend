@@ -88,19 +88,31 @@
   padding: 0;
   margin: 0;
 }
+.Header .delete-btn {
+  display: flex;
+  padding: 0px 10px;
+  color: red;
+  background-color: white;
+  border: 1px solid black;
+  margin-right: 10px;
+}
 
 .Header .favorite-events li {
   padding: 2.5px 10px;
   margin: 0;
   color: #023047;
   border: solid #219ebc 1px;
+  display: flex;
 }
 
 .Header .favorite-events :hover {
   background-color: #fb8500;
   color: #023047;
 }
-
+.Header .delete-btn:hover {
+  background-color: #8ecae6;
+  color: black;
+}
 @media screen and (max-width: 768px) {
   .Header {
     font-size: x-small;
@@ -115,5 +127,8 @@
   }
   .Header .signin-btn-div {
     padding-top: 0px;
+  }
+  .Header .signout-button-div {
+    margin-bottom: 30px;
   }
 }

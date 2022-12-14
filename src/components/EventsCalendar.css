@@ -20,3 +20,44 @@
 .EventsCalendar {
   margin-top: 85px;
 }
+
+.EventsCalendar .popUp {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #8ecae6;
+  width: 30%;
+  height: 30%;
+  z-index: 15;
+  border-radius: 10%;
+}
+
+.EventsCalendar .popUp .elements-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 30%;
+}
+.EventsCalendar .popUp .title {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.EventsCalendar .popUp .addEvent-btn {
+}
+
+.EventsCalendar .popUp .remove-popup {
+}
+
+@media screen and (max-width: 768px) {
+  .EventsCalendar .popUp {
+    width: 20%;
+    height: 20%;
+  }
+  .EventsCalendar .popUp .title {
+    font-size: 15px;
+  }
+}

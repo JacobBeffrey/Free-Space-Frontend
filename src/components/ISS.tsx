@@ -24,11 +24,10 @@ const ISS = () => {
         ))}
       </ul>
       <iframe
+        className="ISS-Video"
         src="https://www.youtube.com/embed/21X5lGlDOfg?rel=0"
         allowFullScreen
         title="NASA live TV"
-        height={480}
-        width={854}
       ></iframe>
     </div>
   );

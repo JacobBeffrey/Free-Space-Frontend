@@ -4,8 +4,16 @@
   flex-direction: row;
 }
 
+.ISS p {
+  color: white;
+  text-shadow: 2px 2px 3px black;
+}
+
 .AstronautsList li {
   padding: 0 10px;
+  color: white;
+  text-shadow: 2px 2px 3px black;
+  margin: 5px;
 }
 
 .ISS {
@@ -14,5 +22,21 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  /* background-image: url(assets/spaceBackground1.jpg); */
+  /* padding-top: 85px; */
+  background-image: url(/src/assets/spaceBackground1.jpg);
+}
+
+.ISS .ISS-Video {
+  width: 854px;
+  height: 480px;
+}
+
+@media screen and (max-width: 768px) {
+  .ISS .AstronautsList {
+    font-size: small;
+  }
+  .ISS .ISS-Video {
+    width: 640px;
+    height: 360px;
+  }
 }

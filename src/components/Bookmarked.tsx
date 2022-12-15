@@ -81,7 +81,7 @@ const Bookmarked = () => {
         events={calendarJsonInput}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 500 }}
+        style={{ height: 500, backgroundColor: "white" }}
         // onSelectEvent={addEvent}
       />
     </div>

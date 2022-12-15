@@ -1,4 +1,7 @@
 body {
   margin: 0;
   height: 100vh;
+  font-family: "Orbitron", sans-serif;
+  background-image: url(/src/assets/wil-stewart-QYFTkPFqzv4-unsplash.jpg);
+  background-size: cover;
 }

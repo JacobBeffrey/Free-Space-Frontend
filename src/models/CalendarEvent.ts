@@ -3,6 +3,6 @@ export default interface CalendarEvent {
   start: Date;
   title: string;
   description: string;
-  url: string;
+  URL: string;
   end: Date;
 }

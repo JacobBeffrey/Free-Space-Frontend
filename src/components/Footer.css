@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   background-color: #023047;
+  align-items: center;
   color: white;
   position: fixed;
   bottom: 0;
@@ -10,9 +11,24 @@
 .Footer a {
   text-decoration: none;
   color: white;
+  padding-right: 5px;
 }
 
 .Footer li {
   list-style-type: none;
   margin: 10px;
+}
+
+.Footer p {
+  font-size: 10px;
+}
+
+.Footer a:hover {
+  color: #fb8500;
+}
+
+@media screen and (max-width: 768px) {
+  .Footer li {
+    font-size: 10px;
+  }
 }

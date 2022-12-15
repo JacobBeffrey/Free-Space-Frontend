@@ -73,8 +73,21 @@ const Header = () => {
           {favBoolean && (
             <ul className="favorite-events">
               {favorites?.map((item) => (
-                <li onClick={() => removeEvent(item)} key={item._id}>
-                  <span className="delete-btn">x</span> {item.title}
+                <li key={item._id}>
+                  <span
+                    onClick={() => removeEvent(item)}
+                    className="delete-btn"
+                  >
+                    x
+                  </span>{" "}
+                  <a
+                    onClick={() => console.log(item.URL)}
+                    href={item.URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {item.title}
+                  </a>
                 </li>
               ))}
             </ul>

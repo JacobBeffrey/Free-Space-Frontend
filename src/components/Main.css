@@ -4,6 +4,7 @@
   flex-direction: column;
   /* justify-items: end; */
   height: 100%;
+  margin-bottom: 63.6px;
 }
 .Main h2 {
   color: white;
@@ -18,11 +19,13 @@
 }
 .Main .Summary {
   position: absolute;
-
+  font-family: "Cinzel", serif;
+  font-size: 15pt;
   bottom: 0;
-  transform: translate(0, -200%);
+  /* transform: translate(0, -75%); */
   display: flex; /*
   margin-top: 20%; */
+  padding-bottom: 63.6px;
 }
 .Main img {
   position: absolute;
@@ -39,6 +42,7 @@
     margin-left: 7.5px;
   }
   .Main .Summary {
-    transform: translate(0, -75%);
+    /* transform: translate(0, -40%); */
+    font-size: 12.5pt;
   }
 }
